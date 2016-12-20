@@ -1,0 +1,91 @@
+body {
+	background: #3E4649;
+	color: #f7f7f7;
+	font-family: 'Montserrat', sans-serif;
+}
+h1,
+h2 {
+	font-weight: bold;
+}
+p {
+	font-size: 16px;
+	color: #cdcdcd;
+}
+.navbar {
+	margin-bottom: 0;
+}
+.jumbotron {
+	background: #27A967;
+	color: white;
+	text-align: center;
+}
+.jumbotron p {
+	color: white;
+	font-size: 26px;
+}
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+.dropdown-menu {
+	background: #2E2F31;
+	border-radius: 0;
+	border: 0;
+}
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	background: #27A967;
+}
+.navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+	background: #2C463C;
+}
+.dropdown-menu li a {
+	padding: 10px;
+}
+.btn-primary {
+	color: #fff;
+	background-color: transparent;
+	border-color: white;
+	margin-bottom: 5px;
+}
+.btn-primary:hover {
+	color: #27A967;
+	background-color: white;
+	border-color: white;
+}
+.glyphicon-large {
+	font-size: 100px;
+}
+.call-to-action {
+	text-align: center;
+}
+.call-to-action p {
+	margin-bottom: 30px;
+	font-family: sans-serif;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #9c9c9c;
+ }
+
+ .table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #4d4d4d;
+ }
+
+ .table-striped.table-hover>tbody>tr:hover>td, 
+.table-striped.table-hover>tbody>tr:hover>th {
+  background-color: #ecf3f8;
+}
+
+input, select, textarea{
+    color: #ff0000;
+}
+
+textarea:focus, input:focus {
+    color: #ff0000;
+}

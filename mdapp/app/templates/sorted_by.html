@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'flash.html' %}
+
+        <br />
+        <h1>Sort Songs</h1>
+        <br />
+        
+        <form action="" class="form-horizontal" method="post">
+          {{ form.hidden_tag() }}
+        <table>
+          <tr>
+              <td>Choose sort:</td>
+              <td>{{ form.sort_choice}}</td>
+              <td>
+              {% for error in form.sort_choice.errors %}
+              <span style="color: red;">[{{ error }}]</span><br>
+              {% endfor %}
+              </td>
+          </tr>
+          <tr>
+              <td>Write value:</td>
+              <td>{{ form.sort_val}}</td>
+              <td>
+              {% for error in form.sort_val.errors %}
+              <span style="color: red;">[{{ error }}]</span><br>
+              {% endfor %}
+              </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td><input type="submit"  value="Submit!"></td>
+              <td></td>
+          </tr>
+        </table>
+        </form>
+
+      <table class = "table table-striped table-hover">
+   <caption>Songs</caption>
+   
+   <thead>
+      <tr>
+         <th>Name</th>
+         <th>Ragam</th>
+         <th>Talam</th>
+         <th>Artist</th>
+         <th></th>
+      </tr>
+   </thead>
+   
+   <tbody>
+    {% for song in songs %}
+    <tr>
+        <td><a target= "_blank" href = "{{song.link}}">{{song.name}}</a></td>
+        <td>{{ song.ragam }}</td>
+        <td>{{ song.talam }}</td>
+        <td>{{ song.artist }}</td>
+        <td><a class="btn btn-primary" href= "{{ url_for('.edit', song_id=song.id)}}" role="button"> Edit </a></td>
+    </tr>
+    {% endfor %}
+      
+   </tbody>
+   
+</table>
+        
+
+
+
+{% endblock %}
