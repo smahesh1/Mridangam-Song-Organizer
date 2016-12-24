@@ -49,8 +49,6 @@ input[type=text], select, input[type=password], input[type=date] {
   padding: 20px;
 }
 
-
-
 #sortedPageId{
   background-image:url('../img/legends.jpg');
   height:300px;
@@ -164,12 +162,4 @@ input, select, textarea{
 
 textarea:focus, input:focus {
     color: #696969;
-}
-
-#btn-side{
-  position: absolute;
-  left: 10px;
-  bottom: 5px;
-  
-
 }
