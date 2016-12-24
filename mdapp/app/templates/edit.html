@@ -5,8 +5,8 @@
         <br />
         <h2>Edit Song</h2>
         <br />
-        
-        <form action=""  method="post" id = "form">
+        <div id = "form"> 
+        <form action=""  method="post">
         {{ form.hidden_tag()}}
         <table>
           <tr>
@@ -60,22 +60,14 @@
               <td></td>
           </tr>
           
-          <td>
-            <form action = "" method="post">
-            {{ del_form.hidden_tag() }}
-            <button type="submit" class="btn btn-primary">Delete</button>
-        </form>
-          </td>
-          <td></td>
-          <tr>
-          </tr>
         </table>
         </form>
         
-        <!-- <form action = "" method="post">
+        <form action = "" method="post" >
             {{ del_form.hidden_tag() }}
-            <button type="submit" class="btn btn-primary">Delete</button>
-        </form> -->
+            <button type="submit" class="btn btn-primary" id ="btn-side">Delete</button>
+        </form>
+      </div>
 
 
 {% endblock %}
