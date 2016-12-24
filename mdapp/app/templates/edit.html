@@ -3,14 +3,14 @@
 {% block content %}
 {% include 'flash.html' %}
         <br />
-        <h1>Edit Song</h1>
+        <h2>Edit Song</h2>
         <br />
         
-        <form action=""  method="post">
+        <form action=""  method="post" id = "form">
         {{ form.hidden_tag()}}
         <table>
           <tr>
-              <td>Write name:</td>
+              <td>Song name:</td>
               <td>{{ form.name(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.name.errors %}
@@ -19,7 +19,7 @@
               </td>
           </tr>
           <tr>
-              <td>Write ragam:</td>
+              <td>Ragam:</td>
               <td>{{ form.ragam(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.ragam.errors %}
@@ -28,7 +28,7 @@
               </td>
           </tr>
           <tr>
-              <td>Write talam:</td>
+              <td>Talam:</td>
               <td>{{ form.talam(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.talam.errors %}
@@ -37,7 +37,7 @@
               </td>
           </tr>
           <tr>
-              <td>Write artist:</td>
+              <td>Artist:</td>
               <td>{{ form.artist(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.artist.errors %}
@@ -46,7 +46,7 @@
               </td>
           </tr>
           <tr>
-              <td>Write link:</td>
+              <td>Link to Song:</td>
               <td>{{ form.link(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.link.errors %}
@@ -59,13 +59,23 @@
               <td><button type="submit" class="btn btn-primary">Save</button></td>
               <td></td>
           </tr>
-        </table>
-        </form>
-        
-        <form action = "" method="post">
+          
+          <td>
+            <form action = "" method="post">
             {{ del_form.hidden_tag() }}
             <button type="submit" class="btn btn-primary">Delete</button>
         </form>
+          </td>
+          <td></td>
+          <tr>
+          </tr>
+        </table>
+        </form>
+        
+        <!-- <form action = "" method="post">
+            {{ del_form.hidden_tag() }}
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form> -->
 
 
 {% endblock %}

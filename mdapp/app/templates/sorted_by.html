@@ -3,15 +3,15 @@
 {% block content %}
 {% include 'flash.html' %}
 
-        <br />
+        <div id = "sortedPageId"><br />
         <h1>Sort Songs</h1>
         <br />
         
-        <form action="" class="form-horizontal" method="post">
+        <form action="" class="form-horizontal" method="post" >
           {{ form.hidden_tag() }}
         <table>
           <tr>
-              <td>Choose sort:</td>
+              <td>Choose filter type:</td>
               <td>{{ form.sort_choice}}</td>
               <td>
               {% for error in form.sort_choice.errors %}
@@ -20,7 +20,7 @@
               </td>
           </tr>
           <tr>
-              <td>Write value:</td>
+              <td>Enter filter value:</td>
               <td>{{ form.sort_val}}</td>
               <td>
               {% for error in form.sort_val.errors %}
@@ -30,14 +30,13 @@
           </tr>
           <tr>
               <td></td>
-              <td><input type="submit"  value="Submit!"></td>
+              <td><button type="submit" class="btn btn-primary">Submit</button></td>
               <td></td>
           </tr>
         </table>
         </form>
-
+</div>
       <table class = "table table-striped table-hover">
-   <caption>Songs</caption>
    
    <thead>
       <tr>
@@ -52,7 +51,7 @@
    <tbody>
     {% for song in songs %}
     <tr>
-        <td><a target= "_blank" href = "{{song.link}}">{{song.name}}</a></td>
+        <td><a class="btn btn-primary" role="button" target= "_blank" href = "{{song.link}}">{{song.name}}</a></td>
         <td>{{ song.ragam }}</td>
         <td>{{ song.talam }}</td>
         <td>{{ song.artist }}</td>

@@ -3,20 +3,20 @@
 
 {% block content %}
 
-
-<div class="jumbotron">
+<div class="bg">
+<div class="jumbotron" id = "home">
     <div class="container">
-        <h1>Welcome!</h1>
-        <p>Some filler text that makes this look cool</p>
+        <h1>Mridangam Song Organizer</h1>
+        <h3></h3>
         <br>
         <p><a class="btn btn-primary btn-lg" href="{{url_for('add')}}" role="button">Add Songs Now »</a> <a class="btn btn-primary btn-lg" href="{{url_for('sorted_by')}}" role="button">Find Songs»</a></p>
     </div>
+</div>
 </div>
 {% include 'flash.html' %}
 
 
 <table class = "table table-striped table-hover">
-   <caption>Songs</caption>
    
    <thead>
       <tr>
@@ -31,7 +31,7 @@
    <tbody>
     {% for song in songs %}
     <tr>
-        <td><a target= "_blank" href = "{{song.link}}">{{song.name}}</a></td>
+        <td><a class="btn btn-primary" role="button" target= "_blank" href = "{{song.link}}">{{song.name}}</a></td>
         <td>{{ song.ragam }}</td>
         <td>{{ song.talam }}</td>
         <td>{{ song.artist }}</td>

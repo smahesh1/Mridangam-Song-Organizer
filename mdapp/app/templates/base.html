@@ -17,7 +17,7 @@
     
 
     {% if title %}
-    <title>{{ title }} - Songs Searcher</title>
+    <title>{{ title }} -Song Organizer</title>
     {% else %}
     <title>Songs Searcher</title>
     {% endif %}
@@ -25,6 +25,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
   <body>
  
     <nav class="navbar navbar-inverse navbar-static-top">
@@ -36,13 +37,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('index') }}">Song Searcher</a>
+            <a class="navbar-brand" href="{{ url_for('index') }}">Song Organizer</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('add') }}">Add Song</a></li>
-                <li><a href="{{ url_for('sorted_by') }}">Sort Song</a></li>
+                <li><a href="{{ url_for('sorted_by') }}">Find Song</a></li>
                 
             </ul>
         </div>

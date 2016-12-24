@@ -3,14 +3,14 @@
  {% block content %}
  {% include 'flash.html' %}
         <br />
-        <h1>Add Song</h1>
+        <h2>Add Song</h2>
         <br />
 
- <form action="" method="post" name="post">
+ <form action="" method="post" name="post" id="form" style= "display:block">
       {{form.hidden_tag()}}
       <table>
-          <tr>
-              <td>Write name:</td>
+          <tr class="spaceUnder">
+              <td>Song name:</td>
               <td>{{ form.name(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.name.errors %}
@@ -18,26 +18,26 @@
               {% endfor %}
               </td>
           </tr>
-          <tr>
-              <td>Write ragam:</td>
+          <tr class="spaceUnder">
+              <td>Ragam:</td>
               <td>{{ form.ragam(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.ragam.errors %}
               <span style="color: red;">[{{ error }}]</span><br>
               {% endfor %}
               </td>
-          </tr>
-          <tr>
-              <td>Write talam:</td>
+          </tr >
+          <tr class="spaceUnder">
+              <td>Talam:</td>
               <td>{{ form.talam(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.talam.errors %}
               <span style="color: red;">[{{ error }}]</span><br>
               {% endfor %}
               </td>
-          </tr>
-          <tr>
-              <td>Write artist:</td>
+          </tr >
+          <tr class="spaceUnder">
+              <td>Artist:</td>
               <td>{{ form.artist(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.artist.errors %}
@@ -45,8 +45,8 @@
               {% endfor %}
               </td>
           </tr>
-          <tr>
-              <td>Write link:</td>
+          <tr class="spaceUnder">
+              <td>Link to Song:</td>
               <td>{{ form.link(size=30, maxlength=140) }}</td>
               <td>
               {% for error in form.link.errors %}
