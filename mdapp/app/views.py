@@ -66,20 +66,20 @@ def sorted_by():
         songs = Song.query.all()
         songs.reverse()
         if request.method == 'POST' and form.validate_on_submit():
-            if (form.sort_choice.data == 'ragam') and len(Song.query.filter(Song.ragam.ilike("%"+form.sort_val.data+"%")).all()) > 0:
-                songs = Song.query.filter(Song.ragam.ilike("%"+form.sort_val.data+"%")).all()
-            elif (form.sort_choice.data == 'talam' and len(Song.query.filter(Song.talam.ilike("%"+form.sort_val.data+"%")).all())>0):
-                songs = Song.query.filter(Song.talam.ilike("%"+form.sort_val.data+"%")).all()
-            elif (form.sort_choice.data == 'artist' and len(Song.query.filter(Song.artist.ilike("%"+form.sort_val.data+"%")).all())>0):
-                songs = Song.query.filter(Song.artist.ilike("%"+form.sort_val.data+"%")).all()
-            elif (form.sort_choice.data == 'name' and len(Song.query.filter(Song.name.ilike("%"+form.sort_val.data+"%")).all())>0):
-                songs = Song.query.filter(Song.name.ilike("%"+form.sort_val.data+"%")).all()
-            elif (form.sort_choice.data == 'varanam' and len(Song.query.filter(Song.name.ilike("%varanam%") | Song.name.ilike('%varnam%')).all())>0):
-                songs = Song.query.filter(Song.name.ilike("%varanam%") | Song.name.ilike('%varnam%')).all()
+            if (form.sort_choice.data == 'ragam') and len(Song.query.filter(Song.ragam.like("%"+form.sort_val.data+"%")).all()) > 0:
+                songs = Song.query.filter(Song.ragam.like("%"+form.sort_val.data+"%")).all()
+            elif (form.sort_choice.data == 'talam' and len(Song.query.filter(Song.talam.like("%"+form.sort_val.data+"%")).all())>0):
+                songs = Song.query.filter(Song.talam.like("%"+form.sort_val.data+"%")).all()
+            elif (form.sort_choice.data == 'artist' and len(Song.query.filter(Song.artist.like("%"+form.sort_val.data+"%")).all())>0):
+                songs = Song.query.filter(Song.artist.like("%"+form.sort_val.data+"%")).all()
+            elif (form.sort_choice.data == 'name' and len(Song.query.filter(Song.name.like("%"+form.sort_val.data+"%")).all())>0):
+                songs = Song.query.filter(Song.name.like("%"+form.sort_val.data+"%")).all()
+            elif (form.sort_choice.data == 'varanam' and len(Song.query.filter(Song.name.like("%varanam%") | Song.name.like('%varnam%')).all())>0):
+                songs = Song.query.filter(Song.name.like("%varanam%") | Song.name.like('%varnam%')).all()
             else:
                 #flash('sort fail')
                 songs = Song.query.all()
-            #flash(form.sort_choice.data + " and " + form.sort_val.data)
+            #flash(form.sort_choice.data)
             return render_template('sorted_by.html',
                            title='Song Sorting',
                            form=form,
