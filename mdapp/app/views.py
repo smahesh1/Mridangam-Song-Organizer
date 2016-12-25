@@ -18,10 +18,17 @@ def index():
                            #user=user,
                            songs=songs)
 
+def find_largest_id():
+    max_id_val= 0
+    for song in Song.query.all():
+        if song.id > max_id_val:
+            max_id_val = song.id
+    return max_id_val
+
 @app.route('/add', methods = ['GET', 'POST'])
 def add():
     if len(Song.query.all()) > 0:
-        id_val = Song.query.all()[-1].id + 1
+        id_val = find_largest_id() + 1
     else:
         id_val = 1
     form = SongForm()
@@ -31,7 +38,7 @@ def add():
             artist = form.artist.data)
         db.session.add(song)
         db.session.commit()
-        flash('Your ' + song.name + ' is now posted!')
+        flash(song.name + ' is now posted!')
         return redirect(url_for('index'))
     return render_template('add.html',
         title = 'Add Song', form =form)
